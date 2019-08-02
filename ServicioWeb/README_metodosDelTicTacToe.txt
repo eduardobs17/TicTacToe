@@ -1,0 +1,7 @@
+obtenery (string->int)
+obtenerx  (string->int)
+verificarGane (string->boolean)
+getSimbolo (int->String)
+setJugada (int, int, string->)
+getIndiceMatriz (int, int -> string)
+logicaTicTacToe (->string)

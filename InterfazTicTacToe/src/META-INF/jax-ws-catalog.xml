@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://titanic.ecci.ucr.ac.cr/~eb40999/TicTacToeService/tictactoe.wsdl" uri="wsdl/titanic.ecci.ucr.ac.cr/_eb40999/TicTacToeService/tictactoe.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr/~bsolano/HolaMundoServiceDocumentLiteral/?wsdl" uri="xml-resources/web-service-references/WsClient/wsdl/titanic.ecci.ucr.ac.cr/_bsolano/HolaMundoServiceDocumentLiteral/.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr:80/~eb40999/TicTacToeService/?wsdl" uri="xml-resources/web-service-references/WsClient/wsdl/titanic.ecci.ucr.ac.cr_80/_eb40999/TicTacToeService/.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr/~eb40999/TicTacToeService/?wsdl" uri="xml-resources/web-service-references/WsClient/wsdl/titanic.ecci.ucr.ac.cr/_eb40999/TicTacToeService/.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr/~eb40999/TicTacToeService/TicTacToe.wsdl" uri="wsdl/titanic.ecci.ucr.ac.cr/_eb40999/TicTacToeService/TicTacToe.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr:80/~eb51053/tictactoeServiceDocumentLiteral/tictactoe.wsdl" uri="wsdl/titanic.ecci.ucr.ac.cr_80/_eb51053/tictactoeServiceDocumentLiteral/tictactoe.wsdl"/>
+    <system systemId="http://titanic.ecci.ucr.ac.cr:80/~bsolano/HolaMundoServiceRPCEncoded/HolaMundo.wsdl" uri="wsdl/titanic.ecci.ucr.ac.cr_80/_bsolano/HolaMundoServiceRPCEncoded/HolaMundo.wsdl"/>
+</catalog>

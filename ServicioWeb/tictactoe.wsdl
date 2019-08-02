@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Descripción WSDL de la clase tic tac toe (corregido)-->
+
+<definitions name="ECCI_tictactoe"
+             targetNamespace="urn:ECCI_tictactoe"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="urn:ECCI_tictactoe"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+  <!-- Tipos complejos (Corregido)-->
+
+  <types xmlns="http://schemas.xmlsoap.org/wsdl/">
+    <xsd:schema targetNamespace="urn:ECCI_tictactoe">
+      <xsd:element name="obtenery">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="numero" type="xsd:string" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="obteneryReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="obteneryResult" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="obtenerx">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="numero" type="xsd:string" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="obtenerxReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="obtenerxResult" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verificarGane">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="value" type="xsd:string" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="verificarGaneReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="verificarGaneResult" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getSimbolo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="numeroJugada" type="xsd:int" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getSimboloReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getSimboloResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setJugada">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="numFila" type="xsd:int" nillable="true" />
+            <xsd:element name="numColumna" type="xsd:int" nillable="true" />
+            <xsd:element name="simbolo" type="xsd:string" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setJugadaReturn">
+        <xsd:complexType/>
+      </xsd:element>
+      <xsd:element name="getIndiceMatriz">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="numFila" type="xsd:int" nillable="true" />
+            <xsd:element name="numColumna" type="xsd:int" nillable="true" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getIndiceMatrizReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getIndiceMatrizResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="logicaTicTacToe">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="logicaTicTacToeReturn">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="logicaTicTacToeResult" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+
+  <!-- Mensajes para comunicarse con la clase HolaMundo. (Corrregido)-->
+
+  <message name="obteneryRequest">
+    <part name="parameters" element="tns:obtenery" />
+  </message>
+
+  <message name="obteneryResponse">
+    <part name="parameters" element="tns:obteneryReturn" />
+  </message>
+
+  <message name="obtenerxRequest">
+    <part name="parameters" element="tns:obtenerx" />
+  </message>
+
+  <message name="obtenerxResponse">
+    <part name="parameters" element="tns:obtenerxReturn" />
+  </message>
+
+  <message name="verificarGaneRequest">
+    <part name="parameters" element="tns:verificarGane" />
+  </message>
+
+  <message name="verificarGaneResponse">
+    <part name="parameters" element="tns:verificarGaneReturn" />
+  </message>
+
+  <message name="getSimboloRequest">
+    <part name="parameters" element="tns:getSimbolo" />
+  </message>
+
+  <message name="getSimboloResponse">
+    <part name="parameters" element="tns:getSimboloReturn" />
+  </message>
+
+  <message name="setJugadaRequest">
+    <part name="parameters" element="tns:setJugada" />
+  </message>
+
+  <message name="setJugadaResponse">
+    <part name="parameters" element="tns:setJugadaReturn" />
+  </message>
+
+  <message name="getIndiceMatrizRequest">
+    <part name="parameters" element="tns:getIndiceMatriz" />
+  </message>
+
+  <message name="getIndiceMatrizResponse">
+    <part name="parameters" element="tns:getIndiceMatrizReturn" />
+  </message>
+
+  <message name="logicaTicTacToeRequest">
+    <part name="parameters" element="tns:logicaTicTacToe" />
+  </message>
+
+  <message name="logicaTicTacToeResponse">
+    <part name="parameters" element="tns:logicaTicTacToeReturn" />
+  </message>
+  
+  <!-- Puerto para comunicar con la clase tic tac toe (Corregido)-->
+
+  <portType name="ECCI_tictactoePort">
+
+    <operation name="obtenery">
+      <input message="tns:obteneryRequest" />
+      <output message="tns:obteneryResponse" />
+    </operation>
+    
+    <operation name="obtenerx">
+      <input message="tns:obtenerxRequest" />
+      <output message="tns:obtenerxResponse" />
+    </operation>
+
+    <operation name="verificarGane">
+      <input message="tns:verificarGaneRequest" />
+      <output message="tns:verificarGaneResponse" />
+    </operation>
+
+    <operation name="getSimbolo">
+      <input message="tns:getSimboloRequest" />
+      <output message="tns:getSimboloResponse" />
+    </operation>
+
+    <operation name="setJugada">
+      <input message="tns:setJugadaRequest" />
+      <output message="tns:setJugadaResponse" />
+    </operation>
+
+    <operation name="getIndiceMatriz">
+      <input message="tns:getIndiceMatrizRequest" />
+      <output message="tns:getIndiceMatrizResponse" />
+    </operation>
+    
+    <operation name="logicaTicTacToe">
+      <input message="tns:logicaTicTacToeRequest" />
+      <output message="tns:logicaTicTacToeResponse" />
+    </operation>
+
+  </portType>
+
+  <!-- Vinculación de los llamados con el transporte - Document, SOAP/Literal over HTTP (Corregido) -->
+
+  <binding name="ECCI_tictactoeBinding" type="tns:ECCI_tictactoePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+    <operation name="obtenery">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#obtenery" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="obtenerx">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#obtenerx" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="verificarGane">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#verificarGane" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="getSimbolo">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#getSimbolo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="setJugada">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#setJugada" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="getIndiceMatriz">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#getIndiceMatriz" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+    <operation name="logicaTicTacToe">
+      <soap:operation soapAction="urn:ECCI_tictactoe#tictactoe#logicaTicTacToe" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+
+
+  </binding>
+
+  <!-- Punto de comunicación con la clase tictactoe (Corregido)-->
+
+  <service name="ECCI_tictactoe">
+    <documentation />
+    <port name="ECCI_tictactoePort" binding="tns:ECCI_tictactoeBinding">
+      <soap:address location="http://titanic.ecci.ucr.ac.cr:80/~eb51053/tictactoeServiceDocumentLiteral/" />
+    </port>
+  </service>
+
+</definitions>
